@@ -10,13 +10,17 @@ root {
 }
 
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 p,
 ul {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 a {
@@ -28,12 +32,9 @@ body {
   font-family: Roboto, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  min-width: 280px;
+  width: 390px;
+  max-width: 100%;
+  min-width: 375px;
   min-height: 100vh;
   font-size: 16px;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }

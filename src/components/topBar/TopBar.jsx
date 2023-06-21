@@ -1,21 +1,27 @@
 import { CameraIcon, IGTVIcon, LogoIcon, MessangerIcon } from "../../icons";
-import "./TopBar.css"
+import "./TopBar.css";
 
-const TopBar = () => { 
-    return (
-        <div className="TopBar">
-            <div className="TopBar__camera">
-             <CameraIcon />
-            </div>
-            <div className="TopBar__logo">
-             <LogoIcon />
-            </div>
-            <div className="TopBar__actions">
-             <IGTVIcon />
-             <MessangerIcon />
-            </div>
+const TopBar = ({ setSection }) => {
+  const onHandleClick = (sectionName) => setSection(sectionName);
+
+  return (
+    <div className="TopBar">
+      <div className="TopBar__camera" onClick={() => onHandleClick("camera")}>
+        <CameraIcon />
+      </div>
+      <div className="TopBar__logo" onClick={() => onHandleClick("home")}>
+        <LogoIcon />
+      </div>
+      <div className="TopBar__actions">
+        <div className="TopBar__actions--IGTV" onClick={() => onHandleClick("IGTV")}>
+          <IGTVIcon />
         </div>
-    )
-}
+        <div className="TopBar__actions--messenger" onClick={() => onHandleClick("messenger")}>
+          <MessangerIcon />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default TopBar;

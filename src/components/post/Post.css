@@ -1,0 +1,67 @@
+.Post {
+  width: 100%;
+  height: auto;
+  padding: 8px 0;
+}
+
+.PostTop {
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.PostTop--userImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.PostTop__userInfo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.PostTop__userInfo--username,
+.PostTop__userInfo--location {
+  font-size: 12px;
+  height: 50%;
+}
+
+.PostTop__userInfo--username {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.PostTop__userInfo--location {
+  font-size: 11px;
+}
+
+.PostContent {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.PostContent--image {
+  display: block;
+  position: absolute;
+  top: calc(50% - 250px);
+  left: -50%;
+}
+
+.PostActions {
+  height: 22px;
+  padding: 10px;
+}
+
+.PostActions > svg {
+  cursor: pointer;
+}
