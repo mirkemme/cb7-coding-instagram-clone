@@ -16,7 +16,7 @@ const TopBar = ({ setSection }) => {
         <div className="TopBar__actions--IGTV" onClick={() => onHandleClick("IGTV")}>
           <IGTVIcon />
         </div>
-        <div className="TopBar__actions--messenger" onClick={() => onHandleClick("messenger")}>
+        <div className="TopBar__actions--messanger" onClick={() => onHandleClick("messanger")}>
           <MessangerIcon />
         </div>
       </div>

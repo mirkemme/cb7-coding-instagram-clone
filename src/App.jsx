@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GET } from "./utils/http";
 import "./App.css";
 import TopBar from "./components/topBar";
 import HomePage from "./components/homePage";
@@ -9,24 +10,12 @@ function App() {
   const [section, setSection] = useState("home");
   const [stories, setStories] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [messages, setMessages] = useState([]);
+  const [conversations, setConversations] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.npoint.io/7995f380b0b66214d835")
-      .then((res) => res.json())
-      .then((data) => setStories(data));
-  }, []);
-
-  useEffect(() => {
-    fetch("https://api.npoint.io/c59d0538fafba6432ffe")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  }, []);
-
-  useEffect(() => {
-    fetch("https://api.npoint.io/cc36d685c811173fa18a")
-      .then((res) => res.json())
-      .then((data) => setMessages(data));
+    GET("https://api.npoint.io/7995f380b0b66214d835").then((data) => setStories(data));
+    GET("https://api.npoint.io/c59d0538fafba6432ffe").then((data) => setPosts(data));
+    GET("https://api.npoint.io/45615d0ddef177eef95b").then((data) => setConversations(data.messageList));
   }, []);
 
   const onSectionRender = () => {
@@ -37,8 +26,8 @@ function App() {
         return <Camera />;
       case "IGTV":
         return <h1>IGTV</h1>;
-      case "messenger":
-        return <Messanger messages={messages} />;
+      case "messanger":
+        return <Messanger conversations={conversations} />;
     }
   };
 
