@@ -18,7 +18,7 @@ function App() {
   const [conversations, setConversations] = useState([]);
 
   useEffect(() => {
-    GET("https://api.npoint.io/8d6966977a25ae908ac4").then((data) => setStories(data));
+    GET("https://api.npoint.io/7b6a0651acd2fec4ade5").then((data) => setStories(data));
     GET("https://api.npoint.io/026054c23bca04aeb3e7").then((data) => setPosts(data));
     GET("https://api.npoint.io/45615d0ddef177eef95b").then((data) => setConversations(data.messageList));
   }, []);
