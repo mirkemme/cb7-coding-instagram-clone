@@ -46,15 +46,25 @@
 .PostContent {
   width: 100%;
   height: 450px;
-  position: relative;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
 .PostContent--image {
+  width: auto;
+  height: 100%;
+  margin: auto;
   display: block;
-  position: absolute;
-  top: calc(50% - 250px);
-  left: -50%;
 }
 
 .PostActions {

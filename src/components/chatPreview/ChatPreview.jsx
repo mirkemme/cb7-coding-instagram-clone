@@ -1,21 +1,19 @@
 import { useState } from "react";
 import { CameraIcon } from "../../icons";
 import "./ChatPreview.css";
-import Chat from "../../chat/Chat";
-import Messanger from "../messanger/Messanger";
 
-const ChatPreview = ({ chatPreview, setMessanger }) => {
+const ChatPreview = ({ chatPreview, setUserChat }) => {
   const [chat, setChat] = useState("");
 
-  const onSetChat = (participantUsername) => {
-    setChat(participantUsername);
+  const onSetChat = (userChat) => {
+    setUserChat(userChat);
   };
 
   const onChatRendering = () => {
     switch (chat) {
       case "":
         return (
-          <div className="chatPreview" onClick={() => onSetChat(chatPreview?.participants[1].username)}>
+          <div className="chatPreview" onClick={() => onSetChat(chatPreview)}>
             <div className="chatPreview__userImage">
               <img src={chatPreview?.participants[1].avatar_url} alt="userImage" />
             </div>
@@ -27,13 +25,6 @@ const ChatPreview = ({ chatPreview, setMessanger }) => {
               <CameraIcon fill={"#00000066"} />
             </div>
           </div>
-        );
-      case "Emily":
-        return (
-          <>
-            {setMessanger("")}
-            <Messanger />
-          </>
         );
     }
   };
